@@ -59,10 +59,10 @@ function thisSlide(index) {
         document.querySelector('.slide_text').textContent = 'Javascript is cool!';
     }
     if(index == 2) {
-        document.querySelector('.slide_text').textContent = 'Index html!';
+        document.querySelector('.slide_text').textContent = 'Index html is great!';
     }
     if(index == 3) {
-        document.querySelector('.slide_text').textContent = 'Css style!';
+        document.querySelector('.slide_text').textContent = 'Css are beautiful!';
     }
 }
 
