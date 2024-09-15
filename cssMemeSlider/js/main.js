@@ -1,6 +1,7 @@
 const sliderImages = document.querySelectorAll('.slider_img'),
     sliderLine = document.querySelector('.slider-line'),
-    sliderDots = document.querySelectorAll('.slider_dot'),
+    sliderDots = document.querySelectorAll('.big_dot'),
+    sliderDotsColor = document.querySelectorAll('.slider_dot'),
     sliderBtnNext = document.querySelector('.slider_btn_next'),
     sliderBtnPrev = document.querySelector('.slider_btn_prev');
 
@@ -52,6 +53,9 @@ function rollSlider() {
 function thisSlide(index) {
     sliderDots.forEach(item => item.classList.remove('active_dot'));
     sliderDots[index].classList.add('active_dot');
+    sliderDotsColor.forEach(item => item.classList.remove('active_color'));
+    sliderDotsColor[index].classList.add('active_color');
+
     if(index == 0) {
         document.querySelector('.slide_text').textContent = 'Frontend is the best!';
         document.querySelector('.slide_text').classList.add('text-animation');
