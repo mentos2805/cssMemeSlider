@@ -75,6 +75,23 @@
     color: white;
 }
 
+/* Анимация текста */
+.slide_text.text-animation {
+    opacity: 0;
+    animation: text-animation ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+  }
+  
+  @keyframes text-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 @media screen and (max-width: 550px) {
     .slider_wrapper_text_and_controls {
         flex-direction: column-reverse;

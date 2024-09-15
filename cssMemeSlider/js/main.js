@@ -54,15 +54,23 @@ function thisSlide(index) {
     sliderDots[index].classList.add('active_dot');
     if(index == 0) {
         document.querySelector('.slide_text').textContent = 'Frontend is the best!';
+        document.querySelector('.slide_text').classList.add('text-animation');
+        setTimeout(textAnimation, 1000);
     }
     if(index == 1) {
         document.querySelector('.slide_text').textContent = 'Javascript is cool!';
+        document.querySelector('.slide_text').classList.add('text-animation');
+        setTimeout(textAnimation, 1000);
     }
     if(index == 2) {
         document.querySelector('.slide_text').textContent = 'Index html is great!';
+        document.querySelector('.slide_text').classList.add('text-animation');
+        setTimeout(textAnimation, 1000);
     }
     if(index == 3) {
         document.querySelector('.slide_text').textContent = 'Css are beautiful!';
+        document.querySelector('.slide_text').classList.add('text-animation');
+        setTimeout(textAnimation, 1000);
     }
 }
 
@@ -73,3 +81,7 @@ sliderDots.forEach((dot, index) => {
         thisSlide(sliderCount);
     })
 })
+
+function textAnimation () {
+    document.querySelector('.slide_text').classList.remove('text-animation');
+}
