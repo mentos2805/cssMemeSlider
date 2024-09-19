@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    max-width: 34%;
+    border-top: 30px solid black;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.wrapper {
+    max-width: 100%;
+}
+
+.slider {
+    display: flex;
+    max-width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.control {
+    display: flex;
+    column-gap: 10px;
+}
+
+input {
+    display: none;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.big_dot {
+    width: 2.5em;
+    height: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big_dot:hover {
+    cursor: pointer;
+    .slider_dot {
+        background-color: aquamarine;
+    }
+}
+
+.slider_dot {
+    width: 1em;
+    height: 1em;
+    border: 3px solid green;
+    border-radius: 100%;
+}
+
+.slider_dot:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 1.5em;
+    color: white;
+    height: 30px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+#slider-1:checked ~ .slider .main-first{
+    margin-left: 0;
+    transition-duration: .5s;
+}
+
+#slider-2:checked ~ .slider .main-first {
+    margin-left: -100%;
+    transition-duration: .5s;
+}
+
+#slider-3:checked ~ .slider .main-first{
+    margin-left: -200%;
+    transition-duration: .5s;
+}
+
+#slider-4:checked ~ .slider .main-first{
+    margin-left: -300%;
+    transition-duration: .5s;
+}
+
+
+#slider-1:checked ~ .content .text .text_slider-1 {
+    margin-top: 0;
+}
+
+#slider-2:checked ~ .content .text .text_slider-1 {
+    margin-top: -27px;
+}
+
+#slider-3:checked ~ .content .text .text_slider-1 {
+    margin-top: -54px;
+}
+
+#slider-4:checked ~ .content .text .text_slider-1 {
+    margin-top: -81px;
+}
+
+
+/* ----------------------Анимация start--------------------------------- */
+
+#slider-1:checked ~ .content .text .text_slider-1 {
+    animation: text-animation 1s ease-in-out;
+}
+
+#slider-2:checked ~ .content .text .text_slider-2 {
+    animation: text-animation 1s ease-in-out;
+}
+
+#slider-3:checked ~ .content .text .text_slider-3 {
+    animation: text-animation 1s ease-in-out;
+}
+
+#slider-4:checked ~ .content .text .text_slider-4 {
+    animation: text-animation 1s ease-in-out;
+}
+
+@keyframes text-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+/* ----------------------Анимация end--------------------------------- */
+
+/* ----------------------Активный слайд start--------------------------------- */
+
+#slider-1:checked ~ .content .control .big_dot:nth-child(1) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+#slider-2:checked ~ .content .control .big_dot:nth-child(2) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+#slider-3:checked ~ .content .control .big_dot:nth-child(3) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+#slider-4:checked ~ .content .control .big_dot:nth-child(4) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+
+@keyframes slider-dot-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+/* ----------------------Активный слайд start--------------------------------- */
+
+@media screen and (max-width: 550px) {
+    .content {
+        flex-direction: column-reverse;
+        justify-content: center;
+        }
+}
