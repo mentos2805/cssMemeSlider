@@ -4,45 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cssMemeSlider</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mem-slider</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <div class="slider">
-        <div class="slider-line">
-            <img src="img/pic1.jpg" class="slider_img" alt="">
-            <img src="img/pic2.jpg" class="slider_img" alt="">
-            <img src="img/pic3.jpg" class="slider_img" alt="">
-            <img src="img/pic4.jpg" class="slider_img" alt="">
+    <div class="wrapper-slider">
+        <div class="wrapper">
+            <input type="radio" name="memes" id="slider-1" checked>
+            <input type="radio" name="memes" id="slider-2">
+            <input type="radio" name="memes" id="slider-3">
+            <input type="radio" name="memes" id="slider-4"> 
+      
+        <div class="slider">
+            <div class="memes main-first"><img src="img/pic1.jpg" alt="slider"></div>
+            <div class="memes"><img src="img/pic2.jpg" alt="slider"></div>
+            <div class="memes"><img src="img/pic3.jpg" alt="slider"></div>
+            <div class="memes"><img src="img/pic4.jpg" alt="slider"></div>
         </div>
-
-        <div class="slider_wrapper_text_and_controls">
-            <div class="slide_text">Frontend is the best!</div>
-                <div class="slider_wrapper">
-                    <div class="big_dot"> <div class="slider_dot active_dot active_color"></div></div>
-                    <div class="big_dot"><div class="slider_dot"></div></div>
-                    <div class="big_dot"><div class="slider_dot"></div></div>
-                    <div class="big_dot"><div class="slider_dot"></div></div>
-                </div>
-        </div>
-           
-        <button class="slider_btn_prev">
-            <img src="img/left-arrow.png" alt="">
-        </button>
-        <button class="slider_btn_next">
-            <img src="img/left-arrow.png" alt="">
-        </button>
-   
+        <div class="content">
+            <div class="text">
+                <div class="text_slider-1">Frontend is the best!</div>
+                <div class="text_slider-2">Javascript is cool!</div>
+                <div class="text_slider-3">Index html is great!</div>
+                <div class="text_slider-4">Css are beautiful!</div>
+            </div>
+            <div class="control">
+                <label for="slider-1" class="big_dot"><div class="slider_dot"></div></label>
+                <label for="slider-2" class="big_dot"><div class="slider_dot"></div></label>
+                <label for="slider-3" class="big_dot"><div class="slider_dot"></div></label>
+                <label for="slider-4" class="big_dot"><div class="slider_dot"></div></label>
+            </div>
+        </div> 
     </div>
-</body>
-</html>
 </body>
 </html>

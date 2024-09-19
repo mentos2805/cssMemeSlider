@@ -1,32 +1,46 @@
-.slider {
-    max-width: 800px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 75px;
-    border-left: 25px solid black;
-    border-right: 25px solid black;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.slider-line {
-    background-color: black;
+.wrapper-slider {
     display: flex;
     align-items: center;
-    transition: all 1s;
-    padding-top: 30px;
+    justify-content: center;
+    background-color: black;
+    max-width: 34%;
+    border-top: 30px solid black;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
-.slider_btn_prev {
-    display: none;
+.wrapper {
+    max-width: 100%;
 }
 
-.slider_btn_next {
-    display: none;
-}
-
-.slider_wrapper {
+.slider {
     display: flex;
-    column-gap: 5%;
+    max-width: 800px;
+    height: 600px;
+    overflow: hidden;
 }
+
+.control {
+    display: flex;
+    column-gap: 10px;
+}
+
+input {
+    display: none;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 
 .big_dot {
     width: 2.5em;
@@ -38,6 +52,9 @@
 
 .big_dot:hover {
     cursor: pointer;
+    .slider_dot {
+        background-color: aquamarine;
+    }
 }
 
 .slider_dot {
@@ -52,38 +69,71 @@
     cursor: pointer;
 }
 
-.active_color {
-    background-color: blue;
-}
-
-.test {
-    width: 300px;
-    height: 300px;
-    background: green;
-}
-
-.slider_wrapper_text_and_controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    height: 7em;
-}
-
-.slide_text {
+.text {
     font-size: 1.5em;
     color: white;
+    height: 30px;
+    overflow: hidden;
+    margin-top: 12px;
 }
 
-/* Анимация текста */
-.slide_text.text-animation {
-    opacity: 0;
-    animation: text-animation ease-in 1;
-    animation-fill-mode: forwards;
-    animation-duration: 1s;
-  }
-  
-  @keyframes text-animation {
+#slider-1:checked ~ .slider .main-first{
+    margin-left: 0;
+    transition-duration: .5s;
+}
+
+#slider-2:checked ~ .slider .main-first {
+    margin-left: -100%;
+    transition-duration: .5s;
+}
+
+#slider-3:checked ~ .slider .main-first{
+    margin-left: -200%;
+    transition-duration: .5s;
+}
+
+#slider-4:checked ~ .slider .main-first{
+    margin-left: -300%;
+    transition-duration: .5s;
+}
+
+
+#slider-1:checked ~ .content .text .text_slider-1 {
+    margin-top: 0;
+}
+
+#slider-2:checked ~ .content .text .text_slider-1 {
+    margin-top: -27px;
+}
+
+#slider-3:checked ~ .content .text .text_slider-1 {
+    margin-top: -54px;
+}
+
+#slider-4:checked ~ .content .text .text_slider-1 {
+    margin-top: -81px;
+}
+
+
+/* ----------------------Анимация start--------------------------------- */
+
+#slider-1:checked ~ .content .text .text_slider-1 {
+    animation: text-animation 1s ease-in-out;
+}
+
+#slider-2:checked ~ .content .text .text_slider-2 {
+    animation: text-animation 1s ease-in-out;
+}
+
+#slider-3:checked ~ .content .text .text_slider-3 {
+    animation: text-animation 1s ease-in-out;
+}
+
+#slider-4:checked ~ .content .text .text_slider-4 {
+    animation: text-animation 1s ease-in-out;
+}
+
+@keyframes text-animation {
     0% {
       opacity: 0;
     }
@@ -92,13 +142,41 @@
     }
   }
 
+/* ----------------------Анимация end--------------------------------- */
+
+/* ----------------------Активный слайд start--------------------------------- */
+
+#slider-1:checked ~ .content .control .big_dot:nth-child(1) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+#slider-2:checked ~ .content .control .big_dot:nth-child(2) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+#slider-3:checked ~ .content .control .big_dot:nth-child(3) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+#slider-4:checked ~ .content .control .big_dot:nth-child(4) .slider_dot {
+    background-color: blue;
+    animation: slider-dot-animation 0.5s ease-in-out;
+}
+
+@keyframes slider-dot-animation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+/* ----------------------Активный слайд start--------------------------------- */
+
 @media screen and (max-width: 550px) {
-    .slider_wrapper_text_and_controls {
+    .content {
         flex-direction: column-reverse;
-        row-gap: 8px;
         justify-content: center;
         }
-    .slide_text {
-        margin-left: -55%;
-    }
 }
